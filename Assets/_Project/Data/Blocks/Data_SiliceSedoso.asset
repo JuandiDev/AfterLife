@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb857a19e7e8e04fb4955645a633581, type: 3}
+  m_Name: Data_SiliceSedoso
+  m_EditorClassIdentifier: 
+  blockName: Silice Sedoso
+  type: 5
+  fullBlockPrefab: {fileID: 6587937289192332658, guid: 4cafaa257c148184ba61d0acb60f8b56, type: 3}
+  slopePrefab: {fileID: 9086954513681478751, guid: ddc9152091191a54fb127acad3cd2a6b, type: 3}
+  cornerPrefab: {fileID: 5385356265969555032, guid: cf6e8742f0464834eac746c2e2cda34d, type: 3}
+  innerCornerPrefab: {fileID: 3519332005578255767, guid: 0ddb0df0401e8044da66c0152c461e76, type: 3}
+  stepSound: {fileID: 0}

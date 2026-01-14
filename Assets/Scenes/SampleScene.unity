@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.90188676, g: 0.56325376, b: 0.7756168, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -556,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 675502487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.721, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 500, y: 1, z: 500}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 832575519}
   - component: {fileID: 832575518}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: Global_Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: ebfb0fc2eef16634594a3fe960b4b5a2, type: 2}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -603,6 +603,67 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832575517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1582033330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582033332}
+  - component: {fileID: 1582033331}
+  m_Layer: 0
+  m_Name: WorldGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1582033331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582033330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05634536d18cb374aaaf98b86c014793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldSize: 60
+  blockSize: 4
+  terrainDepth: 8
+  heightScale: 12
+  noiseScale: 0.06
+  heightOffset: 0
+  cornerRotationFix: 90
+  biomePalette:
+  - {fileID: 11400000, guid: f9ca6130e587547438bbe072a346fcb5, type: 2}
+  - {fileID: 11400000, guid: 0a107de6d57a17d4997e124ccd026806, type: 2}
+  - {fileID: 11400000, guid: 702b794807925bb4ca87a6b64da1d54d, type: 2}
+  - {fileID: 11400000, guid: d2e2c6bce367bed4f99cd090ce74d31f, type: 2}
+  - {fileID: 11400000, guid: 77e33194369d12c4494357cf2f2f1d34, type: 2}
+  - {fileID: 11400000, guid: 81ee017bb78631f4eabcfa7075cc69de, type: 2}
+  - {fileID: 11400000, guid: 244ebdbee17b373498450c405e91cf78, type: 2}
+  - {fileID: 11400000, guid: 731f04feaff7c1648bbcf6ede5cb182b, type: 2}
+  biomeNoiseScale: 0.03
+--- !u!4 &1582033332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582033330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -619,3 +680,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 675502491}
   - {fileID: 385849321}
+  - {fileID: 1582033332}
