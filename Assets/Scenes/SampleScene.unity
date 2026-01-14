@@ -640,10 +640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05634536d18cb374aaaf98b86c014793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: 60
+  worldSize: 70
   blockSize: 4
   terrainDepth: 8
-  heightScale: 12
+  heightScale: 5
   noiseScale: 0.06
   heightOffset: 0
   cornerRotationFix: 90

@@ -37,4 +37,13 @@ public class BlockData : ScriptableObject
     [Header("Feedback Sensorial")]
     [Tooltip("Sonido al pisar")]
     public AudioClip stepSound;
+
+    [Header("Visuales (Look & Feel)")]
+    [Tooltip("El material que vestirá a los bloques de este bioma")]
+    public Material blockMaterial; // <--- AQUÍ VA LA TEXTURA/SHADER
+
+    [Tooltip("Perfil de Volumen (Post-Procesado) al entrar en este bioma")]
+    // Usamos string o un objeto VolumeProfile. Por ahora dejémoslo simple.
+    public UnityEngine.Rendering.VolumeProfile biomePostProcess;
+
 }

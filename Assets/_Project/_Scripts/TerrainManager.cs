@@ -124,12 +124,29 @@ public class TerrainManager : MonoBehaviour
         for (int y = bottomLimit; y < currentHeight; y++)
         {
             Vector3 fillPos = new Vector3(0, y * blockSize, 0) + posMultiplier;
+
+            // Instanciamos el bloque de relleno
             GameObject fillBlock = Instantiate(biome.fullBlockPrefab, fillPos, Quaternion.identity);
             fillBlock.transform.parent = transform;
+
+            // --- AQUÍ AÑADIMOS LA INYECCIÓN DE MATERIAL ---
+            // (Para que el relleno tenga el mismo color que la superficie)
+            if (biome.blockMaterial != null)
+            {
+                Renderer rend = fillBlock.GetComponent<Renderer>();
+                if (rend == null) rend = fillBlock.GetComponentInChildren<Renderer>();
+
+                if (rend != null)
+                {
+                    rend.material = biome.blockMaterial;
+                }
+            }
+            // ---------------------------------------------
+
             fillBlock.isStatic = true;
         }
 
-        // SUPERFICIE (Lógica Invertida: Rampa en el bloque ALTO)
+        // --- SUPERFICIE ---
         Vector3 topPos = new Vector3(0, currentHeight * blockSize, 0) + posMultiplier;
         SpawnSurfaceBlock(x, z, currentHeight, topPos, biome);
     }
@@ -227,6 +244,22 @@ public class TerrainManager : MonoBehaviour
 
         GameObject block = Instantiate(shapeToSpawn, pos, rotation);
         block.transform.parent = transform;
+
+        // --- INYECCIÓN DE MATERIAL ---
+        if (biome.blockMaterial != null)
+        {
+            // Buscamos el Renderer en el objeto o sus hijos
+            Renderer rend = block.GetComponent<Renderer>();
+
+            // Si no está en la raíz (a veces al importar FBX queda en un hijo), buscamos en hijos
+            if (rend == null) rend = block.GetComponentInChildren<Renderer>();
+
+            if (rend != null)
+            {
+                rend.material = biome.blockMaterial;
+            }
+        }
+
         block.isStatic = true;
     }
 
