@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -267,7 +267,8 @@ GameObject:
   - component: {fileID: 385849321}
   - component: {fileID: 385849320}
   - component: {fileID: 385849319}
-  m_Layer: 0
+  - component: {fileID: 385849322}
+  m_Layer: 3
   m_Name: Player_DreamWalker
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -332,6 +333,27 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385849322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385849318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d34c03fb7dc4be4190a567b54a0b618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 330585545}
+  reachDistance: 30
+  blockSize: 4
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1
+  cursorPrefab: {fileID: 5278565638696347424, guid: f86fd0702c6dd504599a5446adcca194, type: 3}
+  blockToBuild: {fileID: 6587937289192332658, guid: 4cafaa257c148184ba61d0acb60f8b56, type: 3}
+  cursorOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
